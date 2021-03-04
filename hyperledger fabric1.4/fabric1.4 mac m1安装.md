@@ -42,6 +42,15 @@ cd fabric
 
 git checkout release-1.4
 
+
+## 1.4用的还是vendor形式下载依赖，那么有些包势必要翻墙，万幸go已经可以同时兼顾vendor和访问限制了
+
+# 需要配置好goproxy，打开gomod的支持
+go mod init 
+go mod tidy
+go mod vendor 
+
+## 最后执行编译
 make native
 
 ```
@@ -52,6 +61,13 @@ make native
 git clone https://github.com.cnpmjs.org/hyperledger/fabric-ca.git
 
 cd fabric-ca
+
+git checkout release-1.4
+
+# 需要配置好goproxy，打开gomod的支持
+go mod init 
+go mod tidy
+go mod vendor
 
 make 
 
