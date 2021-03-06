@@ -8,12 +8,11 @@ services:
 
   db:
     image: mysql:5.7
-    command: --default-authentication-plugin=mysql_native_password
     container_name: mysql_server
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_USER: xch
+      MYSQL_USER: root
       MYSQL_DATABASE: monitordb
     ports:
       - "3306:3306"
@@ -60,7 +59,7 @@ services:
     ports:
       - "9104:9104"
     environment:
-      DATA_SOURCE_NAME: xch:123456.@(mysql_server:3306)/monitordb
+      DATA_SOURCE_NAME: root:123456.@(mysql_server:3306)/monitordb
     networks:
       - monitor
 
