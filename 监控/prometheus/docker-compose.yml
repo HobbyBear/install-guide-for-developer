@@ -59,7 +59,7 @@ services:
     ports:
       - "9104:9104"
     environment:
-      DATA_SOURCE_NAME: root:123456.@(mysql_server:3306)/monitordb
+      DATA_SOURCE_NAME: root:123456.@(139.198.186.81:3306)/monitordb
     networks:
       - monitor
 
